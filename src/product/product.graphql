@@ -1,0 +1,34 @@
+type Product {
+  id: Int
+  title: String
+  description: String
+  price: Int
+  discountPercentage: Float
+  rating: Float
+  stock: Int
+  brand: String
+  category: String
+  thumbnail: String
+  images: [String]
+}
+
+input CreateProductInput {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input UpdateProductInput {
+  id: Int!
+}
+
+type Query {
+  getToken: String
+  product: [Product]!
+  getAllProducts: [Product]
+}
+
+type Mutation {
+  createProduct(createProductInput: CreateProductInput!): Product!
+  updateProduct(updateProductInput: UpdateProductInput!): Product!
+  removeProduct(id: Int!): Product
+}
